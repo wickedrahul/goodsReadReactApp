@@ -33,8 +33,8 @@ class App extends Component {
         </div>
       {
 
-        booksResults.map(f=>{
-          return <Book data={f}/>
+        booksResults.map((f, index)=>{
+          return <Book key={index} data={f}/>
         })
       }
         
