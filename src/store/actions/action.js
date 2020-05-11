@@ -16,7 +16,7 @@ export const onSearch = (val)=>{
 		url= `/search?q=${val}&&key=Xx8furlXCo3dtnLttdgL7w`;
 	}
 	return dispatch =>{
-	axios.get(url)
+	axios.get("https://cors-anywhere.herokuapp.com/"+url)
 	  .then(function (res) {
 	    parseString(res.data, function (err, result) {
 	    	let fetchedBooks = result.GoodreadsResponse.search[0].results[0].work;
