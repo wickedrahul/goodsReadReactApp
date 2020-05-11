@@ -11,12 +11,12 @@ export const onSearch = (val)=>{
 	let url= '';
 	console.log('environment', process.env.NODE_ENV)
 	if(process.env.NODE_ENV === "production"){
-		url= `${process.env.REACT_APP_AC_ORIGIN}/search?q=${val}&&key=Xx8furlXCo3dtnLttdgL7w`;
+		url= `https://cors-anywhere.herokuapp.com/${process.env.REACT_APP_AC_ORIGIN}/search?q=${val}&&key=Xx8furlXCo3dtnLttdgL7w`;
 	}else{
 		url= `/search?q=${val}&&key=Xx8furlXCo3dtnLttdgL7w`;
 	}
 	return dispatch =>{
-	axios.get("https://cors-anywhere.herokuapp.com/"+url)
+	axios.get(url)
 	  .then(function (res) {
 	    parseString(res.data, function (err, result) {
 	    	let fetchedBooks = result.GoodreadsResponse.search[0].results[0].work;
