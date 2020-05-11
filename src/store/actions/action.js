@@ -12,6 +12,7 @@ export const onSearch = (val)=>{
 	console.log('environment', process.env.NODE_ENV)
 	if(process.env.NODE_ENV === "production"){
 		url= `https://cors-anywhere.herokuapp.com/${process.env.REACT_APP_AC_ORIGIN}/search?q=${val}&&key=Xx8furlXCo3dtnLttdgL7w`;
+		console.log(url);
 	}else{
 		url= `/search?q=${val}&&key=Xx8furlXCo3dtnLttdgL7w`;
 	}
